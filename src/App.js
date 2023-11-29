@@ -24,15 +24,15 @@ const App = () => {
   return (
     <div className="app-container">
       <Router>
-        {/* {isLoading ? ( // Render loading state until sessionNumber is available
+        {isLoading ? ( // Render loading state until sessionNumber is available
           <p>Loading...</p>
-        ) : ( */}
+        ) : (
           <Routes>
             <Route path="/" element={<LobbyPage sessionNumber={sessionNumber} />} />
             <Route path="/Coding/:title" element={<CodingInput sessionNumber={sessionNumber} />} />
             <Route path="/Smiley" element={<SmileyPage/>} />
           </Routes>
-        {/* )} */}
+        )}
       </Router>
     </div>
   );
