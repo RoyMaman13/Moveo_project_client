@@ -11,7 +11,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true); // Loading state
 
   useEffect(() => {  
-    const socket = io(baseurl);
+    const socket = io('https://moveoprojectserver-production.up.railway.app');
     socket.on('connect', () => {
       setSessionNumber(socket.id);
       setIsLoading(false); // Set loading to false when session number is available

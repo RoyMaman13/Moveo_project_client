@@ -5,7 +5,7 @@ import 'highlight.js/styles/vs.css';
 import './CodingInput.css'
 import io from 'socket.io-client';
 
-const baseurl = 'https://moveoprojectserver-production.up.railway.app/'
+const baseurl = 'https://moveoprojectserver-production.up.railway.app'
 const socket = io(baseurl);
 
 
