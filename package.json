@@ -16,13 +16,12 @@
     "react-router-dom": "^6.20.0",
     "react-scripts": "5.0.1",
     "react-syntax-highlighter": "^15.5.0",
-    "serve": "^14.2.1",
     "socket.io-client": "^4.7.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "npm start",
-    "start": "serve build -s -n -L -p 3000",
+    "dev": "react-scripts start",
+    "start": "erve build -s -n -L -p 3000",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
