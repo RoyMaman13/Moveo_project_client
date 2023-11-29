@@ -23,7 +23,7 @@ const LobbyPage = ({sessionNumber}) => {
   return (
     <Paper elevation={3} className="lobby-container">
       <Typography variant="h4" gutterBottom className="center-text">
-        Choose a Code Block {sessionNumber}
+        Choose a Code Block
       </Typography>
       <List component="nav">
         {codeBlocks.map((block, index) => (
