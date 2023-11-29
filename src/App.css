@@ -1,0 +1,11 @@
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 80vh; */
+  background-color: #f5f5f5; /* Set your desired background color */
+  background-image: url('https://via.placeholder.com/20'); /* URL to your pattern or image */
+  /* Add additional styles as needed */ /* Set a full viewport height for demonstration */
+ /* Occupy full width of the viewport */
+  /* Add additional styles as needed */
+}
