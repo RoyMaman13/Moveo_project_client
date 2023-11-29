@@ -14,7 +14,7 @@ const CodingInput = ({  sessionNumber }) => {
   const effectrun = useRef(false) // Ref to manage useEffect logic
   const { title } = useParams() // Get URL parameters using React Router
   const [code, setCodeContent] = useState('') // State for code content
-  const [isMentor, setIsMentor] = useState(false) // State for mentor status
+  const [isMentor, setIsMentor] = useState(true) // State for mentor status
 
   useEffect(() => {
     if (effectrun.current === false ) {
