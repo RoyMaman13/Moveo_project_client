@@ -5,7 +5,9 @@ import 'highlight.js/styles/vs.css';
 import './CodingInput.css'
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:5000');
+const baseurl = 'https://moveoprojectserver-production.up.railway.app/'
+const socket = io(baseurl);
+
 
 const CodingInput = ({  sessionNumber }) => {
   const navigate = useNavigate() // React hook for navigation
@@ -18,7 +20,7 @@ const CodingInput = ({  sessionNumber }) => {
     if (effectrun.current === false ) {
 
     // Fetch mentor status based on title and sessionNumber
-    fetch(`http://localhost:5000/updateMentor`, {method: 'POST', headers: {'Content-Type': 'application/json',},
+    fetch(`${baseurl}updateMentor`, {method: 'POST', headers: {'Content-Type': 'application/json',},
       body: JSON.stringify({ title: title, sessionId: sessionNumber }),
     })
       .then((response) => {if (!response.ok) {throw new Error('Failed to fetch mentor status')}
@@ -28,7 +30,7 @@ const CodingInput = ({  sessionNumber }) => {
       .catch((error) => {console.error('Error fetching mentor status:', error)});
     
       // Fetch code content based on the title
-    fetch(`http://localhost:5000/code/${title}`)
+    fetch(`${baseurl}code/${title}`)
       .then((response) => {if (!response.ok) {throw new Error('Failed to fetch code')}
         return response.json();
       })
@@ -41,7 +43,7 @@ const CodingInput = ({  sessionNumber }) => {
       if (effectrun.current === true) {
 
       // Check and update mentor on component unmount
-      fetch('http://localhost:5000/checkAndUpdateMentor', {method: 'POST', headers: {'Content-Type': 'application/json',},
+      fetch(`${baseurl}checkAndUpdateMentor`, {method: 'POST', headers: {'Content-Type': 'application/json',},
         body: JSON.stringify({ title: title, sessionId: sessionNumber }),
       })
         .then((response) => {
@@ -71,7 +73,7 @@ const CodingInput = ({  sessionNumber }) => {
 
   // Function to handle submission of code by student
   const handleSubmission = () => {
-  fetch('http://localhost:5000/updateCode', {method: 'POST', headers: {'Content-Type': 'application/json',},
+  fetch(`${baseurl}updateCode`, {method: 'POST', headers: {'Content-Type': 'application/json',},
       body: JSON.stringify({title: title, code: code}),
   })
   .then((response) => {
