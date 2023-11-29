@@ -4,6 +4,7 @@ import { Typography, List, ListItem, ListItemText, Paper } from '@mui/material';
 import './LobbyPage.css'; // Import the associated CSS file
 
 const LobbyPage = ({sessionNumber}) => {
+  const baseurl = 'https://moveoprojectserver-production.up.railway.app/'
   const [codeBlocks, setCodeBlocks] = useState([]);
 
   useEffect(() => {
@@ -12,7 +13,7 @@ const LobbyPage = ({sessionNumber}) => {
 
   const fetchTitles = async () => {
     try {
-      const response = await fetch('http://localhost:5000/titles'); 
+      const response = await fetch(`${baseurl}titles`); 
       if (!response.ok) {throw new Error('Failed to fetch titles')}
       const data = await response.json();
       setCodeBlocks(data);
