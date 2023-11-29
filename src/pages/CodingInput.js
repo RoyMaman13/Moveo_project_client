@@ -40,8 +40,6 @@ const CodingInput = ({  sessionNumber }) => {
       });
     }
     return () => {
-      if (effectrun.current === true) {
-
       // Check and update mentor on component unmount
       fetch(`${baseurl}checkAndUpdateMentor`, {method: 'POST', headers: {'Content-Type': 'application/json',},
         body: JSON.stringify({ title: title, sessionId: sessionNumber }),
@@ -54,7 +52,6 @@ const CodingInput = ({  sessionNumber }) => {
         })
         .catch((error) => {console.error('Error checking and updating mentor:', error);
         });
-      }
       effectrun.current = true
     };
   }, [title, sessionNumber]);
