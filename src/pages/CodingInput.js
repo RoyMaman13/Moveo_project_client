@@ -87,7 +87,7 @@ const CodingInput = ({  sessionNumber }) => {
   return (
     <div>
       <h2 style={{ textAlign: 'center' }}> {isMentor ? 'Hello mentor' : 'Hello student'}</h2>
-      <h2 name='title' style={{ textAlign: 'center' }}>{title}</h2>  
+      <h2 name='title' style={{ textAlign: 'center' }}>{title} {sessionNumber}</h2>  
     <div className='textarea-container'>      
       <div className='highlighter'>  
       <Highlighter className="highlighter">
