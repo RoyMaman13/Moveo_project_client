@@ -9,7 +9,8 @@ const App = () => {
   const [sessionNumber, setSessionNumber] = useState(null); // Use null as the initial state
   const [isLoading, setIsLoading] = useState(true); // Loading state
 
-  useEffect(() => {    
+  useEffect(() => {
+    console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')    
     const socket = io('http://localhost:5000');
     socket.on('connect', () => {
       setSessionNumber(socket.id);
